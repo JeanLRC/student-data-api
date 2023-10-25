@@ -11,5 +11,6 @@ FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 
-COPY --from=build /target/student-data-api-0.0.1-SNAPSHOT.jar
+COPY --from=build /target/student-data-api-0.0.1.jar app.jar
+
 ENTRYPOINT [ "java", "-Dspring.profiles.active=prod", "-jar", "app.jar" ]
